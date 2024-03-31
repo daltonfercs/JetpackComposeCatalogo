@@ -1,6 +1,7 @@
 package com.daltonfercs.jetpackcomposecatalogo
 
 import android.os.Bundle
+import android.widget.Space
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
@@ -8,6 +9,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
@@ -53,6 +55,9 @@ fun MyComplexLayaout(){
         ){
             Text(text = "Hi Sample 1")
         }
+        
+        MySapacer(size = 30)
+
         Row (
             Modifier
                 .fillMaxSize()
@@ -82,6 +87,10 @@ fun MyComplexLayaout(){
     }
 }
 
+@Composable
+fun MySapacer(size:Int){
+    Spacer(modifier = Modifier.height(size.dp))
+}
 @Composable
 fun MyRow(){
     Row (Modifier.fillMaxSize(), horizontalArrangement = Arrangement.SpaceBetween){
